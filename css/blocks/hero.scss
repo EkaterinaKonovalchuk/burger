@@ -1,0 +1,35 @@
+.hero{
+    background: url('../img/content/burger_fon.png') center center / cover no-repeat;
+    
+}
+
+.hero__container{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.hero__menu-button{
+    margin-left: 15px;
+    background: "$red";
+}
+
+.hero__content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex:.75;
+}
+    
+.hero__content-headline{
+  
+        color:#f9b43b;
+   
+    }
+    
+.hero__content-description{
+        color:#ffffff;
+        font-size: 55px;
+        font-family:'Lifehack Medium';
+    }
+    

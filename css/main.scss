@@ -1,5 +1,18 @@
+//colors
+$red: #e45028;
+
+
+
 //normalize
 
 @import"misc/normalize.scss";
 
 @import"misc/layout.scss";
+@import"misc/fonts.scss";
+
+//blocks
+
+@import"blocks/header.scss";
+@import"blocks/hero.scss";
+@import"blocks/btn.scss";
+@import"blocks/headline.scss";
