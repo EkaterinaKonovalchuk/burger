@@ -1,5 +1,5 @@
-body{
-    width:100%;
-    height:100%;
-    background-color: red;
-}
+//normalize
+
+@import"misc/normalize.scss";
+
+@import"misc/layout.scss";
