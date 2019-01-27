@@ -38,4 +38,19 @@ h6{
 .section{
     height: 100vh;
     min-height: 650px;
+
+    &_centered{
+
+        .headline{
+            width: 100%;
+            text-align: center;
+        }
+
+        .container{
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+    }
 }

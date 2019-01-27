@@ -28,3 +28,18 @@ h6 {
 .section {
   height: 100vh;
   min-height: 650px; }
+  .section_centered .headline {
+    width: 100%;
+    text-align: center; }
+  .section_centered .container {
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column; }
