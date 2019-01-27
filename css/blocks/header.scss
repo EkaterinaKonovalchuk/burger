@@ -10,8 +10,8 @@
 }
 
 .menu__item{
-    display: flex;
-    text-transform:uppercase;
+  
+   
 &:last-child{
 &:after{
     display: none;
@@ -29,6 +29,7 @@
 }
 
 .menu__item-link{
+    text-transform:uppercase;
     text-decoration: none;
     font-size: 13px;
     color: #ffffff;
