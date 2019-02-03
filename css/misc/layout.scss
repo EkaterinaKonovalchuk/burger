@@ -1,8 +1,19 @@
-html,
-body{
-    height: 100%
-}
+html {
 
+    @include tablets(){
+      font-size: rem(15px);
+    }
+  
+    @include phones(){
+      font-size: rem(13px);
+    }
+  }
+  
+  html,
+  body {
+    height: 100%;
+  }
+  
 ul {
     padding: 0;
     margin: 0;
@@ -13,16 +24,21 @@ ul {
 
 
 .wrapper{
+    position: relative;
     overflow: hidden;
     min-height: 100%;
     width: 100%;
-    min-width: 940px;
+   /* min-width: 940px;*/
 
 }
 
 .container{
-    width: 940px;
+   max-width: 940px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width:95%;
 }
 
 h1,

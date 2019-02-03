@@ -1,6 +1,2 @@
-.headline {
-  font-size: 72px;
-  text-transform: uppercase;
-  font-family: 'Gagalin-Regular';
-  line-height: 1.1;
-  margin-bottom: 45px; }
+.headline{font-size:rem(72px);text-transform:uppercase;font-family:'Gagalin-Regular';line-height:1.1;margin-bottom:rem(45px)}
+/*# sourceMappingURL=headline.css.map */

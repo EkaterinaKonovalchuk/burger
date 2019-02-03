@@ -20,7 +20,7 @@
 
 .description__item{
     flex:1;
-    margin-right: 15px;
+    margin-right:rem(15px);
 
     &:last-child{
         margin-right: 0;
@@ -38,14 +38,14 @@
 .best__title{
     font-family:'Lifehack Medium';
     color: #2f3234;
-    font-size: 24px;
+    font-size: rem(24px);
     font-weight: 500;
     line-height: 28.14px;
 }
 
 .best__text{
     font-family:'ubuntu-light';
-    font-size: 14px;
+    font-size: rem(14px);
     font-weight: 300;
     line-height: 24.02px;
 }

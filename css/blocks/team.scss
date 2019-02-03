@@ -34,28 +34,50 @@
 
 .name{
     text-decoration: none;
-    margin-bottom: 20px;
-    font-size: 14px;
+    margin-bottom: rem(20px);
+    font-size: rem(14px);
     font-weight: 400;
     line-height: 28.13px;
     color: #ffffff;
     text-transform: uppercase;
     font-family: 'Gagalin-Regular';
+
+    &:before, &:after {
+		content: "";
+		display: block;
+		position: absolute;
+		left: rem(-1px);
+		top: rem(5px);
+		width: 0;
+    height: 0;}
+
+    &:before{
+        border-top:rem(7px) solid #f9b43b;
+        border-left: rem(5px) solid transparent;
+        border-right: rem(5px) solid transparent;
+        border-bottom: rem(0px) solid transparent;
+        transform:rotate(0deg);
+        transition:.3s;
+
+    }
 }
 
+
+
+
 .accordeon__item{
-  /*  margin-bottom: 40px;*/
+  /*  margin-bottom: rem(40px);*/
 }
 
 .accordeon__team-content{
-    display: flex;
+    display: none;
     align-items: center;
 }
 
 .team__accordeon-text{
     width: 70%;
     color: #ffffff;
-    font-size: 14px;
+    font-size: rem(14px);
 
 }
 

@@ -1,18 +1,27 @@
 //colors
 $red: #e45028;
 
-
+//breakpoints
+$tablets:768px;
+$phones:480px;
 
 //normalize
+@import "misc/normalize.scss";
 
-@import"misc/normalize.scss";
+// media
+@import"misc/media.scss";
 
-@import"misc/layout.scss";
-@import"misc/fonts.scss";
+// setups
+
+@import "misc/fonts.scss";
+@import "misc/layout.scss";
+
+
 
 //blocks
 
 @import"blocks/header.scss";
+@import"blocks/hamburger__menu.scss";
 @import"blocks/hero.scss";
 @import"blocks/btn.scss";
 @import"blocks/headline.scss";
@@ -20,3 +29,5 @@ $red: #e45028;
 @import"blocks/reviews.scss";
 @import"blocks/fixed__menu.scss";
 @import"blocks/team.scss";
+@import"blocks/menu.scss";
+

@@ -19,19 +19,19 @@
 }
     &:after{
     content: "";
-    width: 6px;
-    height: 6px;
+    width: rem(6px);
+    height: rem(6px);
     border-radius: 50%;
     display: inline-block;
     background: #ffffff;
-    margin:0 10px;
+    margin:0 rem(10px);
     }
 }
 
 .menu__item-link{
     text-transform:uppercase;
     text-decoration: none;
-    font-size: 13px;
+    font-size: rem(13px);
     color: #ffffff;
     font-family:'ubuntu-medium';
 }
@@ -39,4 +39,11 @@
 .header__buttons{
     display: flex;
     align-items: center;
+}
+
+.header__menu{
+
+    @include tablets(){
+        display:none;
+    }
 }
