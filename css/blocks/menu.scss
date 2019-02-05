@@ -46,3 +46,21 @@
   top: 100%;
   margin-top: rem(-20px);
 }
+
+.menu__accordeon-content{
+	height: 100%;
+	float: left;
+	background: rgba(#2f3234, .93);
+	width: 0;
+	overflow: hidden;
+}
+
+.menu__accordeon-description {
+	font-family: 'ubuntu-light';
+	font-size: rem(14px);
+	color: #fff;
+	padding: rem(60px) rem(30px);
+	width: 100%;
+  line-height: 1.8;
+  display: none;
+}
