@@ -19,7 +19,7 @@
 	}
 
 	&.active {
-		.name {
+		.accordeon__trigger {
 			color: #f9b43b;
 
 			&:before {
@@ -67,7 +67,7 @@
 
 
     
-.name {
+.accordeon__trigger {
 	color: #fff;
 	font-size: rem(14px);
     text-transform: uppercase;
@@ -116,7 +116,7 @@
         
     }
 
-    .name{
+    .accordeon__trigger{
         color:#f9b43b;
     }
 }
