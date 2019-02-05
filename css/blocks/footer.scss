@@ -61,6 +61,10 @@
 
 .socials__item {
   margin-left: rem(10px);
+
+  &:first-child{
+    margin-left: 0;
+  }
 }
 
 .socials__link {

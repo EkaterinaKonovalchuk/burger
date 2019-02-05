@@ -1,6 +1,8 @@
 .hamburger-menu-link{
 	vertical-align: middle;
-	position: relative;
+	position: fixed;
+	top: 25px;
+	right: 20px;
 	height: rem(22px);
 	align-items: center;
 	margin-left: rem(30px);

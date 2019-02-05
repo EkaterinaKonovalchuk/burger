@@ -9,7 +9,22 @@
     text-transform: uppercase;
     font-family:ubuntu-medium;
     
-    &_background_black{
+    &_background_black-one{
         background:#2f3234;
+        @include phones{
+            display: none;
+        }
     }
+
+    &_background_black-two{
+        background:#2f3234;
+        justify-content: center;
+        display: none;
+    font-size: rem(14px);
+    @include phones{
+        display: flex;
+    }
+    }
+       
+    
 }

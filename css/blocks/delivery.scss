@@ -56,6 +56,10 @@ margin-left: 0;
 
   &:last-child{margin-bottom: 0;}
 
+  @include phones{
+    justify-content: center;
+  }
+
 }
 
 .form__block {
@@ -75,7 +79,10 @@ margin-left: 0;
  font-size: rem(14px);
 }
 
+
+
 .form__block-input {
+  outline: none;
      font-size: rem(14px);
   padding: rem(10px);
   padding: rem(5px) rem(10px);
@@ -84,6 +91,10 @@ margin-left: 0;
   width: 100%;
   border: none;
   color: #ffffff;
+
+  &:focus{
+    border: 1px solid #f9b43b;
+  }
   
 }
 
