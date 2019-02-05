@@ -24,7 +24,12 @@
 
 			&:before {
 				transform: rotate(-180deg);
-			}
+            }
+            
+            @include tablets{
+                flex-direction: column;
+                align-items: center;
+            }
 		}
 	}
 }
@@ -105,9 +110,19 @@
 	}
 }
 
+.accordeon__item_is-active{
+    .accordeon__team-content{
+        display: flex;
+        
+    }
 
+    .name{
+        color:#f9b43b;
+    }
+}
 
     .accordeon__team-content{
+
         padding-top: rem(14px);
         display: none;
         @include tablets{
@@ -116,13 +131,15 @@
            // display: flex;
 
         }
+
+        
     
     }
     
  
 
 .team__accordeon-text{
-    width: 70%;
+    padding: 10px;
     color: #ffffff;
     width: 70%;
 
@@ -156,6 +173,3 @@
 	border-radius: 50%;
 }
 
-.accordeon__item_is-active{
-    display: flex;
-}
