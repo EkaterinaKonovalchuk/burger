@@ -16,19 +16,35 @@
 .best__list{
     display: flex;
     justify-content: center;
+
+    @include phones{
+        display: block;
+    }
 }
+
+.best__description-text{
+    @include phones{
+        padding: 0 15px;
+    text-align: left;
+    }
+}
+
 
 .description__item{
     flex:1;
     margin-right:rem(15px);
+    text-align: center;
+    
+    list-style-type: none;
 
     &:last-child{
         margin-right: 0;
     }
     
-    text-align: center;
-    
-    list-style-type: none;
+
+    @include phones{
+        display: flex;
+    }
 }
 
 .best__image--icon{
