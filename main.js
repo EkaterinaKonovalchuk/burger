@@ -7,13 +7,14 @@
        let menu = document.querySelector(options.menu);
        let body = document.querySelector("body");
 
-       let itemsList = document.getElementById("menu__list_hamburger").chuldren;
-
-
+       let itemsList = document.getElementById("menu__list_hamburger").children;
+       flag = false;
        let _toggleMenu = function (e){
            button.classList.toggle("is-active");
            menu.classList.toggle("is-active");
            body.classList.toggle("body-active-menu");
+
+           flag ? flag = false:flag = true;
        };
 
 
@@ -21,7 +22,22 @@
 
        let addListeners = function(){
            button.addEventListener("click", _toggleMenu);
-       }
+       };
+
+       menu.addEventListener("click",function(e){
+           target = e.target;
+           if (target.className == 'menu__item-link'){
+               _toggleMenu();
+           }
+       })
+
+       
+
+       document.addEventListener("keydown",function(e){
+           if((e.keyCode == 27) && (flag)){
+               _toggleMenu();
+           }
+       });
 
        return {
            init:addListeners};

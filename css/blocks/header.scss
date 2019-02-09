@@ -14,7 +14,9 @@
    
 &:last-child{
 &:after{
-    display: none;
+    //display: none;
+    content: none;
+    margin: 0 rem(10px);
 }
 }
     &:after{
@@ -25,6 +27,14 @@
     display: inline-block;
     background: #ffffff;
     margin:0 rem(10px);
+
+    @include tablets{
+        margin-left: 50%;
+        margin-top: rem(10px);
+        margin-bottom: rem(10px);
+        display: flex;
+       // margin:rem(10px) rem(10px) rem(10px) rem(10px);
+    }
     }
 }
 
