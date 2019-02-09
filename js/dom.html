@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	 
+	 <meta name="viewport" content="width=device-width, initial-scale=1">
+	 <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>Задачи по java</title>
+     </head>
+
+     <body>
+      <script>
+      const element=document.createElement('div');
+      document.body.append(element);
+      element.textContent = 'Этот элемент создан при помощи DOM API'
+      
+      const element2=document.createElement('div');
+      element2.classList.add('inner');
+      document.body.append(element2);
+      element2.textContent = 'Этот элемент тоже создан при помощи DOM API'
+      element.appendChild(element2);
+
+      element2.style.color ='red';
+
+      element2.addEventListener('click', function(){
+           console.log('Этот текст говорит о том, что я все сделала правильно');
+      })
+
+
+
+      /*const element3 = document.createElement('a');
+      document.body.append(element3);
+      element3.setAttribute(href,value);*/
+
+      const input=document.createElement('input');
+      document.body.append(input);
+      input.addEventListener('keydown', function(event){
+          button.addEventListener('click', function(){
+     
+               console.log(event.key);
+});
+           
+      });
+
+
+     
+
+   </script>
+     </body>
+</html>
