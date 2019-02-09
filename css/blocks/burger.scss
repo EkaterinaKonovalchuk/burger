@@ -1,7 +1,15 @@
+.burger{
+    background: linear-gradient(to top, #ec8f39,#f8b23b);
+}
+
 .slider{
     position: relative;
 }
 
+
+.slider__list{
+    margin-top: 10%;
+}
 .slider__arrow{
 
         display: inline-block;
@@ -44,6 +52,10 @@
 
 .slider__left-img{
     width: 98%;
+
+    @include tablets{
+        width: 70%;
+    }
 }
 
 .slider__left, .slider__right{
@@ -166,7 +178,7 @@
 .ingredients__description{
     //display: none;
     padding: rem(20px);
-    background: rgba(225, 225, 225, .9);
+    background: rgba(225, 225, 225, 0.9);
     
     opacity: 0;
     left:-9999;
@@ -188,3 +200,32 @@
     left:100%;
     opacity: 1;
 }*/
+
+.calories-measure{
+    background: url('../img/content/kkal.svg') 50% no-repeat;
+    position: relative;
+    background-size: contain;
+    width: rem(65px);
+    height: rem(60px);
+}
+
+
+.calories__amount{
+    position: absolute;
+    bottom: rem(8px);
+    left:52%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: #ffffff;
+    font-size: rem(20px);
+    font-family:'Gagalin-Regular';
+
+}
+
+
+.calories-title{
+    font-size: rem(14px);
+    font-family:'Gagalin-Regular';
+    color: #ffffff;
+    text-align: center;
+}
