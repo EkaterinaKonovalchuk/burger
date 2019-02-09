@@ -36,3 +36,46 @@
 		bottom: 0;
 	}
 }
+
+.hamburger-menu{
+	position: absolute;
+	left: -99999px;
+	right: 0;
+	align-items: center;
+	background: rgba(47, 50, 52, 0.95);
+	justify-content: center;
+	display: none;
+	z-index: 10;
+	transition: opacity .3s;
+
+	
+}
+
+.hamburger-menu.is-active{
+	display: flex;
+	opacity: 1;
+	top:0;
+	left:0;
+	right: 0;
+	bottom: 0;
+	z-index: 1;
+}
+
+.nav__hamburger.menu__item{
+	display: inline;
+	text-align: center;
+	opacity: 0;
+}
+
+.menu__item{
+	white-space:nowrap;
+	vertical-align: middle;
+}
+
+.menu__item-link{
+	display: inline-block;
+	vertical-align: middle;
+	text-transform: uppercase;
+	color:#ffffff;
+	text-decoration: none;
+}

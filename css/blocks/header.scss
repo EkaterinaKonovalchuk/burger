@@ -41,6 +41,16 @@
     align-items: center;
 }
 
+.header__buttons.is-active{
+    display: flex;
+    opacity: 1;
+    top:0;
+    left:0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+}
+
 .header__menu{
 
     @include tablets(){
