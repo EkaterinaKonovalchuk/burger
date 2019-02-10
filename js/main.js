@@ -80,5 +80,19 @@ obj.dog='archi';
 console.log(obj.dog);
 
 //mass__zadani4
+var human = { name: 'Екатерина',
+ lastname:'Коновальчук',
+ old: 24
 
-function hello (human)
+}
+
+function hello (human){
+
+    var result = 'Привет, меня зовут' + human;
+    return result;    
+}
+var result = hello (name)
+console.log(result);
+
+
+
