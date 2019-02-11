@@ -1,5 +1,7 @@
 .burger{
     background: linear-gradient(to top, #ec8f39,#f8b23b);
+    display: flex;
+    align-items: center;
 }
 
 .slider{
@@ -15,7 +17,7 @@
         display: inline-block;
         max-width: rem(23px);
         max-height: rem(20px);
-        opacity: .3;
+        opacity: .8;
         transition: .3s;
         &:hover {
           opacity: 1;
@@ -165,6 +167,7 @@
 
 .ingredients-img{
     height: 60%;
+    width: 100%;
 }
 
 .ingredients-img__text{
@@ -181,7 +184,7 @@
     background: rgba(225, 225, 225, 0.9);
     
     opacity: 0;
-    left:-9999;
+    left:-9999px;
     position: absolute;
     width: rem(270px);
     border-radius: rem(7px);

@@ -7,7 +7,7 @@
        let menu = document.querySelector(options.menu);
        let body = document.querySelector("body");
 
-       let itemsList = document.getElementById("menu__list_hamburger").children;
+       
        flag = false;
        let _toggleMenu = function (e){
            button.classList.toggle("is-active");
