@@ -55,3 +55,42 @@
 
    
   // }
+
+  $(document).ready(function () {
+  let accord = $('.menu_accordeon-text__title');
+  let active = "menu__accordeon-item_active";
+
+  accord.click(function (event){
+      event.preventDefault();
+      let parent = $(this).parent();
+
+      if (parent.hasClass(active)){
+          parent.removeClass(active);
+      } else {
+          accord.parent().removeClass(active);
+          parent.addClass(active);
+      }
+
+  });
+
+});
+
+
+$(document).ready(function () {
+    let team = $('.accordeon__trigger');
+    let trigger = "accordeon__item_is-active";
+  
+    team.click(function (event){
+        event.preventDefault();
+        let parent = $(this).parent();
+  
+        if (parent.hasClass(trigger)){
+            parent.removeClass(trigger);
+        } else {
+            team.parent().removeClass(trigger);
+            parent.addClass(trigger);
+        }
+  
+    });
+  
+  });

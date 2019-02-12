@@ -14,30 +14,67 @@
 
 
 .menu__accordeon{
-    bottom: 0;
-    top: 0;
-    right: 0;
+
     position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: -ms-flexbox;
+    display: flex;
+    overflow: hidden;
+   
+}
+
+
+.menu__accordeon-item{
+   
     display: flex;
 }
 
-.menu__accordeon-item{
-    height: 100%;
+.menu__accordeon-item_active .menu_accordeon-text__title {
+    color: #f9b43b;
 }
 
-.menu__accordeon-img{
-    width: rem(80px);
-    height: 100%;
-    background-size:  cover;
+.menu__accordeon-item_active .menu__accordeon-description{
+    max-width: 33.75rem;
+    padding: 3.875rem 2.1875rem;
+    visibility: visible;
+    opacity: 1;
+}
+
+.menu_accordeon-text__title{
     position: relative;
-    display: block;
+    width: 5rem;
+    font-family:'Gagalin-Regular';
+    font-size: 2.5rem;
+    color: #fff;
+    line-height: 5rem;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    text-transform: uppercase;
 }
 
-.menu_accordeon-text{
+.menu_accordeon-text__title  span {
+    white-space: nowrap;
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    right: 0;
+    transform: rotate(-90deg) translateY(-50%);
+    transform-origin: 0 0;
+    
+}
+
+
+/*.menu_accordeon-text__title {
     white-space: nowrap;
     font-size:rem(40px);
 	color: #fff;
-    font-family:'Gagalin-Regular';
 	text-align: center;
   position: absolute;
   transform: rotate(-90deg) translateY(-50%);
@@ -46,7 +83,7 @@
   top: 100%;
   margin-top: rem(-20px);
 }
-
+*/
 .menu__accordeon-content{
 	height: 100%;
 	float: left;
@@ -56,11 +93,15 @@
 }
 
 .menu__accordeon-description {
-	font-family: 'ubuntu-light';
-	font-size: rem(14px);
-	color: #fff;
-	padding: rem(60px) rem(30px);
-	width: 100%;
-  line-height: 1.8;
-  display: none;
+
+background-color: rgba(47, 50, 52, 0.929);
+color: #fff;
+font-size: rem(14px);
+font-family: 'ubuntu-light';
+line-height: 1.714;
+max-width: 0rem;
+visibility: hidden;
+opacity: 0;
+transition: 1s;
+transition-property: max-width, opacity, visibility;
 }
