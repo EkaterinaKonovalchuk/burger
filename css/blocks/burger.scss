@@ -6,11 +6,17 @@
 
 .slider{
     position: relative;
+    overflow: hidden;
 }
 
-
+#items{
+    display: flex;
+    position: relative;
+    right:0;
+}
 .slider__list{
     margin-top: 10%;
+    will-change: right;
 }
 .slider__arrow{
 
@@ -37,6 +43,8 @@
 
 
 .slider__item{
+    flex-shrink: 0;
+    width: 100%;
     position: relative;
     display: flex;
 
