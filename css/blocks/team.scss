@@ -119,6 +119,10 @@
     .accordeon__trigger{
         color:#f9b43b;
     }
+
+    .accordeon__trigger:before{
+        transform: rotate(180deg);
+    }
 }
 
     .accordeon__team-content{

@@ -98,29 +98,11 @@ $(document).ready(function () {
 
   
 
-
+//slide
     const left = document.querySelector("#left");
     const right = document.querySelector("#right");
     const items = document.querySelector("#items");
     const minRight = 0;
-/*const maxRight = 600;
-const step = 100;
-let currentRight = 0;
-
-items.style.right = currentRight;
-
-right.addEventListener("click", function() {
-  if (currentRight < maxRight) {
-    currentRight += step;
-    items.style.right = currentRight + "px";
-  }
-});
-
-left.addEventListener("click", function() {
-  if (currentRight > minRight) {
-    currentRight -= step;
-    items.style.right = currentRight + "px";
-  }*/
     const computed = getComputedStyle(items);
     
   
@@ -206,113 +188,58 @@ function createModal() {
 }
 
 
-//checked
-/*const no__call = document.querySelector("#no__call");
-document.getElementById('no__call').onclick = function () {
-      document.getElementById('no__call').checked = !0
-
-                }*/
-
-                
-
-
-
-
-
-/*//modal
-
-const overlay = (function(){
-  let body = document.querySelector('body');
-  let link = document.createElement('a');
-
-  link.classList.add('modal__review-close');
-  link.setAttribute('href','#');
- 
-  let openOverlay = function (modalId,content){
-    let overlay = document.querySelector(modalId);
-    let innerOverlay = overlay.querySelector('.modal__reviews-inner');
-
-    link.addEventListener('click', (e)=>{
-      e.preventDefault();
-      closeOverlay(modalId);
-    })
-
-    overlay.addEventListener('click', (e)=>{
-      e.preventDefault();
-      if(e.target == overlay){
-        closeOverlay(modalId);
-      }
-    })
-
-    document.addEventListener("keydown", function(e){
-      if (e.keyCode == 27) closeOverlay(modalId);
-    });
-
-    if(content){
-      innerOverlay.innerHTML = content;
-      innerOverlay.appendChild(link);
-    }
-
-    overlay.classList.add("is-active");
-    body.classList.add('locked');
-  }
-
-  let closeOverlay = function (modalId){
-    let overlay = document.querySelector(modalId);
-
-    overlay.classList.remove('is-active');
-    body.classList.remove('locked');
-  }
-
-  let setContent = function (modalId,content){
-    let overlay = document.querySelector(modalId);
-    let innerOverlay = overlay.querySelector('.modal__review-inner');
-
-    if (content){
-      innerOverlay.innerHTML = content;
-      innerOverlay.appendChild(link);
-    }
-  }
-  return{
-    open: openOverlay,
-    close: closeOverlay,
-    setContent: setContent
-
-  }
-})*/
-
-
-
-
-
-
-
-
-
 
 //Form
-const myForm = document.querySelector("#myForm");
+let myForm = document.querySelector("#myForm");
 const btn = document.querySelector("#form__btn");
 
 btn.addEventListener("click", event => {
 event.preventDefault();
 
 if (validateForm(myForm)){
-
-  const data = {
-    name: myForm.elements.name.value,
-    phone:myForm.elements.phone.value,
-    comment:myForm.elements.comment.value
-
-}
+let formData = new FormData();
+formData.append("name",myForm.elements.name.value);
+formData.append("phone",myForm.elements.phone.value);
+formData.append("comment",myForm.elements.comment.value);
+formData.append("to","katy-konovalchu@yandex.ru") ; 
 
   const xhr = new XMLHttpRequest();
+  xhr.responseType = "json";
 xhr.open("POST",'https://webdev-api.loftschool.com/sendmail');
 xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
-xhr.send(JSON.stringify(data));
+xhr.send(formData);
+
+return xhr;
 
 }
-});
+
+
+var btnForm = function (e){
+  e.preventDefault();
+  var form = e.target;
+  let request = myForm (form);
+
+  request.addEventListener("load",() =>{
+    if (request.status >= 400){
+      let content =" ошибка содинения, попробуйте позже";
+      overlay.open ("#form__btn", `${content}.ошибка ${reques.status}`)
+
+    }
+    else if(request.response.status){
+      overlay.open("#form__btn",content);
+    }
+
+    else{
+      let content = request.response.message;
+      overlay.open("#form__btn",content);
+    }
+    
+  });
+  }
+  btn.addEventListener('click',btnForm);
+
+}
+);
 
 function validateForm(form){
   let valid = true;
