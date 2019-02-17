@@ -104,19 +104,19 @@ $(document).ready(function () {
     const items = document.querySelector("#items");
     const minRight = 0;
     const computed = getComputedStyle(items);
+    let sliderWidth =  parseInt (computed.width);
     
-  
+   var sliderItemsCounter = items.children.length;
+   
     right.addEventListener("click", function(e){
         e.preventDefault();
 
         let currentRight= parseInt(computed.right);
-        console.log(computed.right);
-        if (!currentRight) {
-            currentRight = 0;
+       // console.log(computed.right);
+        if (currentRight < (sliderItemsCounter-1)*sliderWidth) {
+          items.style.right = currentRight + sliderWidth + "px";
           }
-          if (currentRight < 1500) {
-            items.style.right = currentRight + 100 + "px";
-          }
+         
         });
         
         left.addEventListener("click", function(e) {
@@ -125,13 +125,10 @@ $(document).ready(function () {
         
           let currentRight = parseInt(computed.right);
         
-          if (!currentRight) {
-            currentRight = 0;
+          if (currentRight > 0 ) {
+            items.style.right = currentRight - sliderWidth + "px";
           }
         
-          if (currentRight > 0) {
-            items.style.right = currentRight - 100 + "px";
-          }
     });
 
 
