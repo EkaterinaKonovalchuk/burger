@@ -567,7 +567,7 @@
 							   <div class="reviews__btn">
 									<button type="button" class="btn btn_background_black-one" id="reviews__modal">подробнее</button>
 									<!-- <a href="" class="btn btn_background_black-one" id="reviews__modal">подробнее</a>-->
-									 <a href="" class="btn btn_background_black-two">читать отзыв</a>
+									<button type="button" class="btn btn_background_black-two" id="reviews__modal">читать отзыв</button>
 							   </div>
 						   </div>
 				   </li>
@@ -601,12 +601,14 @@
 					<div class="form__row">
 					<label for="" class="form__block">
 					 <div class="form__block-title">Имя</div>
-					 <input type="text" class="form__block-input" name="name">
+					 <input type="text" class="form__block-input" name="name" required>
+					 <div class="error"></div>
 					</label>
 
 					<label for="" class="form__block">
 							<div class="form__block-title">Телефон</div>
-							<input type="text" class="form__block-input" name="phone">
+							<input type="text" class="form__block-input" name="phone" required>
+							<div class="error"></div>
 						   </label>
 				</div>
 
@@ -647,8 +649,9 @@
 							<div class="form__row">
 							  <label class="form__block">
 								<div class="form__block-title">Комментарий</div>
-								<textarea class="form__block-input form__block-input_textarea" name="comment"></textarea>
-							  </label>
+								<textarea class="form__block-input form__block-input_textarea" name="comment" required></textarea>
+								<div class="error"></div>
+							</label>
 							</div>
 							<div class="form__buttons">
 							  <div class="form__row">
@@ -1044,19 +1047,28 @@
 						</nav>
 					</div>
 			</div>
-
+<!--<div class="reviews__modal" id="modal__reviews">
+	<div class="modal__reviews-inner"></div>
+</div>-->
 
 			<script type="template" id="modal-template">
 				<div class="overlay">
 				  <div class="popup__container">
 					<a href="#" class="popup__close"></a>
 					<div class="popup__content">
-					  <h1>sdasd</h1>
+					  <h1>Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть... 
+						Никогда не думал, что булочки могут быть такими мягкими, котлетка такой сочной, а сыр таким расплавленным.</h1>
 					</div>
 				  </div>
 				</div>
 			  </script>
+			
 
+			<!--<script type="template" id="overlay">
+				<div class="modal__reviews-title">lkjkjgjgflg</div>
+			  <div class="modal__reviews-content">lgjgjljglkgjlgjlgf</div>-->
+			
+			</script>
 			<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
 			crossorigin="anonymous"></script>
   

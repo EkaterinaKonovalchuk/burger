@@ -23,6 +23,7 @@
         justify-content: center;
         display: none;
     font-size: rem(14px);
+    border: none;
     @include phones{
         display: flex;
     }

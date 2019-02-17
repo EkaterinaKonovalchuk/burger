@@ -156,7 +156,7 @@ left.addEventListener("click", function() {
 
    
   
-
+//modal
 const button = document.querySelector("#reviews__modal");
 const template = document.querySelector('#modal-template').innerHTML;
 //const button = document.querySelector(".popup");
@@ -164,31 +164,13 @@ const template = document.querySelector('#modal-template').innerHTML;
 const modal = createModal();
 
 button.addEventListener("click", e => {
-  modal.setContent("Hello WOrld");
+  //modal.setContent("Hello WOrld");
   modal.open();
 
-  setTimeout(() => {
-    modal.close();
-  }, 3000);
+  
 });
 
-/*function test() {
-  const a = 10;
-  const b = a + 10;
-  ///
 
-  if (b > 20) {
-    return "yes";
-  } else {
-    return "no";
-  }
-}
-
-const result = test();
-
-console.log(result + 20);
-
-*/
 function createModal() {
   const container = document.createElement("div");
   container.className = "popup";
@@ -204,6 +186,7 @@ function createModal() {
   const overlay = container.querySelector(".overlay");
 
   overlay.addEventListener("click", e => {
+    e.preventDefault();
     if (e.target === overlay) {
       closeBtn.click();
     }
@@ -229,25 +212,147 @@ document.getElementById('no__call').onclick = function () {
       document.getElementById('no__call').checked = !0
 
                 }*/
-    
+
+                
+
+
+
+
+
+/*//modal
+
+const overlay = (function(){
+  let body = document.querySelector('body');
+  let link = document.createElement('a');
+
+  link.classList.add('modal__review-close');
+  link.setAttribute('href','#');
+ 
+  let openOverlay = function (modalId,content){
+    let overlay = document.querySelector(modalId);
+    let innerOverlay = overlay.querySelector('.modal__reviews-inner');
+
+    link.addEventListener('click', (e)=>{
+      e.preventDefault();
+      closeOverlay(modalId);
+    })
+
+    overlay.addEventListener('click', (e)=>{
+      e.preventDefault();
+      if(e.target == overlay){
+        closeOverlay(modalId);
+      }
+    })
+
+    document.addEventListener("keydown", function(e){
+      if (e.keyCode == 27) closeOverlay(modalId);
+    });
+
+    if(content){
+      innerOverlay.innerHTML = content;
+      innerOverlay.appendChild(link);
+    }
+
+    overlay.classList.add("is-active");
+    body.classList.add('locked');
+  }
+
+  let closeOverlay = function (modalId){
+    let overlay = document.querySelector(modalId);
+
+    overlay.classList.remove('is-active');
+    body.classList.remove('locked');
+  }
+
+  let setContent = function (modalId,content){
+    let overlay = document.querySelector(modalId);
+    let innerOverlay = overlay.querySelector('.modal__review-inner');
+
+    if (content){
+      innerOverlay.innerHTML = content;
+      innerOverlay.appendChild(link);
+    }
+  }
+  return{
+    open: openOverlay,
+    close: closeOverlay,
+    setContent: setContent
+
+  }
+})*/
+
+
+
+
+
+
+
+
+
 
 //Form
 const myForm = document.querySelector("#myForm");
 const btn = document.querySelector("#form__btn");
 
-btn.addEventListener("click", function (e){
-e.preventDefault();
+btn.addEventListener("click", event => {
+event.preventDefault();
 
-const data = {
+if (validateForm(myForm)){
+
+  const data = {
     name: myForm.elements.name.value,
     phone:myForm.elements.phone.value,
-    comment:myForm.elements.comment.value,
+    comment:myForm.elements.comment.value
 
 }
+
+  const xhr = new XMLHttpRequest();
+xhr.open("POST",'https://webdev-api.loftschool.com/sendmail');
+xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+xhr.send(JSON.stringify(data));
+
+}
+});
+
+function validateForm(form){
+  let valid = true;
+
+  if (!validateFiled(form.elements.name)){
+    valid = false;
+  }
+
+  if (!validateFiled(form.elements.phone)){
+    valid = false;
+  }
+
+  if (!validateFiled(form.elements.comment)){
+    valid = false;
+  }
+
+  return valid;
+}
+
+function validateFiled(field){
+    field.nextElementSibling.textContent = field.validationMessage;
+    return field.checkValidity();
+  }
+  
+  
+
+
+/*const data = {
+    name: myForm.elements.name.value,
+    phone:myForm.elements.phone.value,
+    comment:myForm.elements.comment.value
+
+}*/
+
+/*
 const xhr = new XMLHttpRequest();
-xhr.open('POST','https://webdev-api.loftschool.com/sendmail');
+xhr.open("POST",'https://webdev-api.loftschool.com/sendmail');
+xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
 xhr.send(JSON.stringify(data));
 
 //console.log(myForm.elements.name.value);
 //console.log(myForm.elements.callback.checked);
-})
+//*/
