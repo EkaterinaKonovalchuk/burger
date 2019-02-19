@@ -57,6 +57,10 @@
     background-size: cover;
     cursor: pointer;
     text-transform: uppercase;
+    flex-shrink: 0;
+    @include phones{
+        width: 3rem;
+    }
 }
 
 .menu_accordeon-text__title  span {

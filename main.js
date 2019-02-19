@@ -99,7 +99,7 @@ $(document).ready(function () {
   
 
 //slide
-    const left = document.querySelector("#left");
+    /*const left = document.querySelector("#left");
     const right = document.querySelector("#right");
     const items = document.querySelector("#items");
     const minRight = 0;
@@ -134,7 +134,7 @@ $(document).ready(function () {
 
 
    
-  
+  */
 //modal
 const button = document.querySelector("#reviews__modal");
 const template = document.querySelector('#modal-template').innerHTML;
