@@ -259,7 +259,7 @@ function validateForm(form){
 function validateFiled(field){
     field.nextElementSibling.textContent = field.validationMessage;
     return field.checkValidity();
-  }
+  };
   
   
 
@@ -280,3 +280,29 @@ xhr.send(JSON.stringify(data));
 //console.log(myForm.elements.name.value);
 //console.log(myForm.elements.callback.checked);
 //*/
+
+
+//map
+
+ymaps.ready(init);
+function init() {
+  var map = new ymaps.Map('map', {
+      center: [59.94, 30.32],
+      zoom: 12
+})
+
+}
+
+
+ymaps.ready(init);
+ 
+function init(){     
+ 
+    var myMap;
+ 
+    myMap = new ymaps.Map("map", {
+        center: [55.76, 37.64],
+        zoom: 7
+    });
+ 
+}
