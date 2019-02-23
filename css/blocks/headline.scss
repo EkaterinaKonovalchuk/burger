@@ -4,4 +4,8 @@
     font-family:'Gagalin-Regular';
     line-height: 1.1;
     margin-bottom: rem(45px);
+
+    @include phones{
+        font-size: rem(64px);
+    }
     }

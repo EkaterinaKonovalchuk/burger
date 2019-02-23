@@ -285,24 +285,176 @@ xhr.send(JSON.stringify(data));
 //map
 
 ymaps.ready(init);
-function init() {
-  var map = new ymaps.Map('map', {
-      center: [59.94, 30.32],
-      zoom: 12
-})
+
+var placemarks = [{
+
+  latitude: 59.97,
+  longitude: 30.31,
+  hintContent: "ул.Литераторов, д. 10",
+balloonContent : "ул.Литераторов, д. 10"
+
+},
+
+
+{
+
+  latitude: 59.94,
+  longitude: 30.25,
+  hintContent: "Малый проспект В О, д. 64",
+balloonContent : "Малый проспект В О, д. 64"
+
+},
+
+
+{
+
+  latitude: 59.93,
+  longitude: 30.34,
+  hintContent: "наб. реки Фонтанки, д. 56",
+balloonContent : "наб. реки Фонтанки, д. 56"
 
 }
 
 
-ymaps.ready(init);
- 
-function init(){     
- 
-    var myMap;
- 
-    myMap = new ymaps.Map("map", {
-        center: [55.76, 37.64],
-        zoom: 7
-    });
- 
+
+];
+function init() {
+  var myMap = new ymaps.Map('map', {
+      center: [59.94, 30.32],
+      zoom: 12,
+      controls: ['zoomControl'],
+      behaviors: ['drag']
+});
+
+placemarks.forEach(function(obj){
+
+  var placemark = new ymaps.Placemark([obj.latitude,obj.longitude], {
+    hintContent: obj.hintContent,
+    balloonContent : obj.balloonContent
+    
+     },
+
+
+ {
+   iconLayout: "default#image",
+   iconImageHref: "../burger/img/svg/map-marker.svg",
+   iconImage: [40, 57],
+   iconImageOffset: [-23, -57]
+ });
+ myMap.geoObjects.add(placemark);
+});
+
+}
+
+//player
+
+let video;
+let durationControl; 
+let soundControl;
+let intervalId;
+
+
+$().ready(function(){
+    video = document.getElementById("player"); 
+    video.addEventListener('click', playStop);
+
+  
+    let playButtons = document.querySelectorAll(".play");
+    for (let i = 0; i < playButtons.length;i++){
+        playButtons[i].addEventListener('click',playStop);
+    }
+
+    let micControl = document.getElementById("mic");
+    micControl.addEventListener('click',soundOf)
+    
+   
+    durationControl = document.getElementById("durationLevel");  
+    durationControl.addEventListener('mousedown', stopInterval);   
+    durationControl.addEventListener('mouseup', setVideoDuration); 
+
+    durationControl.min = 0;
+    durationControl.value = 0;    
+
+    
+    soundControl = document.getElementById("micLevel");    
+    soundControl.addEventListener('mouseup', changeSoundVolume); 
+
+    soundControl.min = 0;
+    soundControl.max = 10;
+   
+    soundControl.value = soundControl.max;
+
+    
+    video.addEventListener('ended', function () {
+        $(".video__player-img").toggleClass("video__player-img--active");
+        video.currentTime = 0;
+    }, false);
+});
+
+
+function playStop(){
+    
+    $(".video__player-img").toggleClass("video__player-img--active");  
+    durationControl.max = video.duration;
+
+    if (video.paused){
+    
+        video.play();
+        intervalId = setInterval(updateDuration,1000/66)
+        
+    }else{
+        
+        video.pause();  
+        clearInterval(intervalId);
+        
+    }
+}
+
+function stopInterval(){
+    video.pause();
+    clearInterval(intervalId);
+}
+
+
+function setVideoDuration(){
+    if (video.paused){
+        video.play();
+    }else{
+        video.pause();  
+    }
+    video.currentTime = durationControl.value;
+    intervalId = setInterval(updateDuration,1000/66);
+}
+
+
+
+function updateDuration(){    
+    durationControl.value = video.currentTime;
+  
+}
+
+function soundOf(){    
+   
+    if (video.volume === 0){
+        video.volume = soundLevel;
+        soundControl.value = soundLevel*10;
+    }else{
+      
+        soundLevel = video.volume;
+        video.volume = 0;
+        soundControl.value = 0;
+    }    
+}
+
+
+function changeSoundVolume(){
+    /*
+        Св-во volume может принимать значения от 0 до 1
+        Делим на 10 для того что бы, была возможность более точной регулировки видео. 
+         video.volume 0 0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9  1 
+   soundControl.value 0   1   2   3   4   5   6   7   8   9  10
+        */
+   
+    video.volume = soundControl.value/10; 
+    console.log(video.volume) 
 }
