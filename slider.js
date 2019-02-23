@@ -70,10 +70,10 @@ var md = new MobileDetect(window.navigator.userAgent),
          if (!inscroll){
 			 inscroll = true;
 		 
-
+console.log(sectionEq);
 
 			let position = sectionEq * -100 + '%';
-			
+			console.log(position);
 			sections
 			.eq(sectionEq)
 			.addClass("is-active")
@@ -156,7 +156,7 @@ var md = new MobileDetect(window.navigator.userAgent),
 
 	}
 	OnePageScroll();
-})
+})();
 
 
 
