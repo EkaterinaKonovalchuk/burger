@@ -55,10 +55,12 @@ $(function () {
 	});
 
 
-	//var md = new MobileDetect (window.navigator.userAgent),
-	//isMobile = md.mobile();
-
+	
+var md = new MobileDetect(window.navigator.userAgent),
+	isMobile = md.mobile();
 	let OnePageScroll = function () {
+
+		
 		const sections = $(".section");
 		const visible = $('#maincontent');
 
@@ -131,14 +133,14 @@ $(function () {
 			},
 			touchmove: e => e.preventDefault()
 		});
-	/*	if (isMobile){
+		if (isMobile){
 			$(window).swipe({
 				swipe: (event,direction) =>{
 					scrollToSection(direction);
 				}
 			})
 		}
-*/
+
         
 
 
