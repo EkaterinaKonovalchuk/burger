@@ -20,7 +20,7 @@
 
     &_background_black-two{
         background:#2f3234;
-        justify-content: center;
+        
         display: none;
     font-size: rem(14px);
     border: none;
@@ -30,4 +30,17 @@
     }
        
     
+}
+
+.popup__button{
+    margin-right: 1.25rem;
+    font-family: 'ubuntu-light';
+    border: 0;
+    background: #e45028;
+    font-size: rem(12px);
+    text-transform: uppercase;
+    border-radius: 0.3125rem;
+    color: #ffffff;
+    padding: 0.625rem 0.9375rem;
+    cursor: pointer;
 }

@@ -31,6 +31,10 @@
     background: #ffffff;
     color: #000000;
 
+    @include phones{
+      max-width: rem(338px);
+    }
+
   }
 
   /*.popup__content{

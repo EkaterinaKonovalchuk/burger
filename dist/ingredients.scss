@@ -1,0 +1,27 @@
+.ingredients__item{
+    width: 100%;
+}
+
+.ingredients__list{
+    display: flex;
+    align-items: center;
+    margin-top: rem(10px);
+    justify-content: flex-start;
+}
+
+.ingredients__text{
+    flex: 1;
+    //margin: 0 40px 0 40px;
+    font-family:'ubuntu-medium';
+    font-size: rem(14px);
+}
+
+.ingredients__ves{
+    font-family:'ubuntu-light';
+    font-size: rem(14px);
+}
+
+.ingredients-image{
+    margin-right: 30px;
+    min-width: 50px;
+}

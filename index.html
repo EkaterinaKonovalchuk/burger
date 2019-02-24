@@ -818,7 +818,7 @@
 									</label>
 								</div>
 								<div class="form__row">
-									<button type="button" class="btn form__button" id="form__btn" required>заказать</button>
+									<button type="submit" class="btn form__button" id="form__btn" required>заказать</button>
 
 
 									<input class="form__button form__button_reset" name="" type="reset" value="Очистить">
@@ -943,22 +943,29 @@
 	<div class="modal__reviews-inner"></div>
 </div>-->
 
-	<script type="template" id="modal-template">
+	
+
+			  <script type="template" id="modal-template">
 				<div class="overlay">
-				  <div class="popup__container">
+					<div class="popup__container">
 					<a href="#" class="popup__close"></a>
 					<div class="popup__content">
-						<div class="reviews__title">Константин Спилберг</div>
-						<div class="reviews__text">
-							<p>
-									Мысли все о них и о них, о них и о них. Нельзя устоять, невозможно забыть... 
-									Никогда не думал, что булочки могут быть такими мягкими, котлетка такой сочной, а сыр таким расплавленным.
-							</p>
-						</div>
+						<div class="popup__content-title"></div>
+						<div class="popup__content-text"></div>
 					</div>
-				  </div>
+					</div>
 				</div>
-			  </script>
+			</script>
+	<script type="template" id="form-template">
+				<div class="overlay">
+					<div class="popup__container">
+					<div class="popup__content">
+						<div class="popup__content-text"></div>
+					</div>
+					<button type="button" class="button popup__button">Закрыть</button>
+					</div>
+				</div>
+			</script>
 
 
 	<!--<script type="template" id="overlay">

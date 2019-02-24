@@ -1,0 +1,80 @@
+.hero{
+    background: url('../img/content/burger_fon.png') center center / cover no-repeat;
+    
+}
+
+.hero__container{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.hero__menu-button{
+    margin:0 rem(40px) 0 rem(10px);
+    //margin-right: rem(40px);
+    //margin-left: rem(15px);
+    background: "$red";
+
+
+}
+
+.hero__content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex:.75;
+
+    @include tablets(){
+        flex-direction: column;
+        align-items: center;
+    }
+}
+    
+.hero__content-headline{
+  
+        color:#f9b43b;
+   
+    }
+    
+.hero__content-description{
+        color:#ffffff;
+        font-size: rem(65px);
+        font-family:'Lifehack Medium';
+
+        @include phones{
+            font-size: rem(48px);
+        }
+    }
+    
+.arrow-scroll{
+    background: url('../../burger/img/content/arrow-scroll.png');
+    width: rem(29px);
+    height: rem(14px);
+    margin: auto;
+}
+
+.hero__content-text{
+    @include tablets(){
+        text-align: center;
+    }
+}
+
+.hero__content-img{
+    float: left;
+    width: 50%;
+}
+
+
+.burger__img{
+
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    max-width: 100%;
+    max-height: 100%;
+@include tablets(){
+    float: none;
+    width: auto;
+}
+}

@@ -1,4 +1,4 @@
-$(function () {
+$(document).ready(function () {
 
 	$('.burger__button-next').on('click', function (e) {
 		e.preventDefault();
@@ -156,7 +156,7 @@ console.log(sectionEq);
 
 	}
 	OnePageScroll();
-})();
+});
 
 
 

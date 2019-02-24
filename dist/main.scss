@@ -1,0 +1,57 @@
+//colors
+$red: #e45028;
+
+//breakpoints
+$tablets:768px;
+$phones:480px;
+
+@mixin tablets(){
+  @media screen and (max-width: $tablets) {
+    @content;
+  }
+}
+
+
+
+@mixin phones {
+  @media screen and(max-width: $phones) {
+    @content;
+  }
+}
+@import "media.scss";
+
+
+
+//normalize
+@import "normalize.scss";
+
+// media
+
+
+// setups
+
+@import "fonts.scss";
+@import "layout.scss";
+
+
+
+//blocks
+
+@import "header.scss";
+@import "hamburger__menu.scss";
+@import "hero.scss";
+@import "btn.scss";
+@import "headline.scss";
+@import "best.scss";
+@import "reviews.scss";
+@import "fixed__menu.scss";
+@import "team.scss";
+@import "menu.scss";
+@import "footer.scss";
+@import "delivery.scss";
+@import "map.scss";
+@import "burger.scss";
+@import "ingredients.scss";
+@import "popup.scss";
+@import "video.scss";
+
