@@ -115,9 +115,17 @@
 
 .video__container{
     height: 100vh;
-    width: 70%;
+    width: 60%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
+    @include tablets{
+        width: 80%;
+    }
+
+    @include phones{
+        width: 90%;
+    }
 }
